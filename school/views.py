@@ -7,7 +7,7 @@ from school.models import Question
 # Create your views here.
 
 def index(request):
-    latest_question_list = get_list_or_404(Question.objects.order_by('-pub_date'))
+    latest_question_list = get_list_or_404(Question.objects.order_by('-pub_date').reverse())
     context = {
         'latest_question_list': latest_question_list,
     }
