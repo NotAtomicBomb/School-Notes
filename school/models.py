@@ -24,3 +24,10 @@ class Choice(models.Model):
     def __str__(self):
         return self.choice_text
 
+
+class Course(models.Model):
+    course_name = models.CharField(max_length=200)
+    course_code = models.CharField(max_length=100)
+
+    def __str__(self):
+        return self.course_name

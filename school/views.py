@@ -1,10 +1,14 @@
 from django.http import HttpResponse
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 
-from school.models import Question
+from school.models import Question, Course
 
 
 # Create your views here.
+def school_index(request):
+    course_list = get_list_or_404(Course.objects.all())
+    return render(request, "school/index.html", {"course_list": course_list})
+
 
 def index(request):
     latest_question_list = get_list_or_404(Question.objects.order_by('-pub_date').reverse())
