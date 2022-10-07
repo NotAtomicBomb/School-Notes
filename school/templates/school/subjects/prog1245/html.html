@@ -1,8 +1,102 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'school/normalize.css' %}">
+<header><h1>{{ subject_name }}</h1></header>
+<nav></nav>
+<div class="main">
 
-<pre class="prettyprint">
+    <div class="item">
+        <h2>Basic HTML Layout</h2>
+        <pre>
+            <code class="language-html">
 &lt;!DOCTYPE html&gt;
-    &lt;html lang=&quot;en&quot;&gt; &lt;head&gt; &lt;meta charset=&quot;UTF-8&quot;&gt; &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;IE=edge&quot;&gt; &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;css/normalize.css&quot;&gt; &lt;link rel=&quot;stylesheet&quot; href=&quot;css/style.css&quot;&gt; &lt;title&gt;Awesome Florists&lt;/title&gt; &lt;/head&gt; &lt;body&gt; &lt;div&gt; &lt;header&gt; &lt;h1&gt;Awesome Florists&lt;/h1&gt; &lt;/header&gt; &lt;nav&gt; &lt;a href=&quot;&quot;&gt;Home&lt;/a&gt; &lt;a href=&quot;&quot;&gt;Flowers&lt;/a&gt; &lt;a href=&quot;&quot;&gt;Gallery&lt;/a&gt; &lt;a href=&quot;&quot;&gt;Order&lt;/a&gt; &lt;a href=&quot;&quot;&gt;Contact&lt;/a&gt; &lt;/nav&gt; &lt;main&gt; &lt;img src=&quot;images/flowers.jpg&quot; alt=&quot;Flowers&quot;&gt; &lt;!-- Image flowers.jpg from Piacquadio, A. (2018, March 18). Assorted Flower Arrangements [Photograph]. From Pexels. https://www.pexels.com/photo/assorted-flower-arrangements-947914/ --&gt; &lt;h2&gt;Welcome to our flower shop!&lt;/h2&gt; &lt;p&gt;If this were a real flower shop, we would definitely be selling the most awesome flowers. For now, you will have to make do with our not so real flower shop. However, we do have a price list to make things look real. You know, fake it till you make it!&lt;/p&gt; &lt;h2&gt;Cherry Blossoms&lt;/h2&gt; &lt;p&gt;Flowers always bring joy to every occasion, here is a &lt;a class=&quot;redlink&quot; href=&quot;https://www.youtube.com/watch?v=yVLuTAlTBUo&amp;t=3s&quot;&gt;video tour of the High Park Cherry Blossoms &lt;/a&gt; to make you feel happy!&lt;/p&gt; &lt;/main&gt; &lt;aside&gt; &lt;h3&gt;Our Best Sellers&lt;/h3&gt; &lt;ul&gt; &lt;li&gt;$39.99 - The Polka Posies&lt;/li&gt; &lt;li&gt;$49.99 - A Dozen Red Roses in a Box&lt;/li&gt; &lt;li&gt;$59.99 - The Rainbow Orchid&lt;/li&gt; &lt;li&gt;$69.99 - The Charming Lavendar&lt;/li&gt; &lt;/ul&gt; &lt;/aside&gt; &lt;footer&gt; &amp;copy; Copyright Conestoga College, 2021 &lt;/footer&gt; &lt;/div&gt; &lt;/body&gt; &lt;/html&gt;
-</pre>
-<script src="https://cdn.jsdelivr.net/gh/google/code-prettify@master/loader/run_prettify.js"></script>
+&lt;html&gt;
+&lt;head&gt;
+    &lt;meta charset="utf-8"&gt;
+    &lt;title&gt;My first HTML page&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;p&gt;This page has been created using HTML.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </code>
+        </pre>
+    </div>
+    <div class="item">
+        <h2>Standard HTML Layout</h2>
+        <pre>
+            <code class="language-html">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;title&gt;Title Here&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;header&gt;&lt;h1&gt;&lt;/h1&gt;&lt;/header&gt;
+    &lt;nav&gt;
+    &lt;/nav&gt;
+    &lt;main&gt;
+    &lt;/main&gt;
+    &lt;aside&gt;
+    &lt;/aside&gt;
+    &lt;footer&gt;
+    &lt;/footer&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+        </code>
+        </pre>
+    </div>
+    <div class="item">
+        <h2>Block Quotes</h2>
+        <pre>
+            <code class="language-html">
+&lt;blockquote cite="https://developer.mozilla.org/en-
+    US/docs/Web/HTML/Element/blockquote"&gt;
+    &lt;p&gt;The &lt;strong&gt;HTML &lt;code&gt;&amp;lt;blockquote&amp;gt;&lt;/code&gt; Element&lt;/strong&gt; (or &lt;em&gt;
+    HTML Block Quotation Element&lt;/em&gt;) indicates that the enclosed text is an extende
+    d quotation.&lt;/p&gt;
+&lt;/blockquote&gt;
+        </code>
+        </pre>
+    </div>
+    <div class="item">
+        <h2>Addresses</h2>
+        <pre>
+            <code class="language-html">
+&lt;p&gt;Proper use of semantic tags improves the &lt;abbr title="Search Engine Optimizati
+on"&gt;SEO&lt;/abbr&gt; of a web page.&lt;/p&gt;
+&lt;address&gt;
+    &lt;p&gt;
+    Conestoga College&lt;br&gt;
+    108 University Ave. East &lt;br&gt;
+    Waterloo, ON N2J 2W2
+    &lt;/p&gt;
+&lt;/address&gt;
+        </code>
+        </pre>
+    </div>
+    <div class="item">
+        <h2>Unordered & Ordered Lists</h2>
+        <pre>
+            <code class="language-html">
+&lt;ul&gt;
+    &lt;li&gt;kiwi&lt;/li&gt;
+    &lt;li&gt;tofu&lt;/li&gt;
+    &lt;li&gt;grapes&lt;/li&gt;
+    &lt;li&gt;lettuce&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol&gt;
+    &lt;li&gt;Add 1 cup water in a pan. &lt;/li&gt;
+    &lt;li&gt;Add 2 spoons sugar, 1 sheet of gelatin, flavouring agent. &lt;/li&gt;
+    &lt;li&gt;Heat and stir for 5 to 7 minutes. &lt;/li&gt;
+    &lt;li&gt;Add half cup of chopped fruits and mix. &lt;/li&gt;
+    &lt;li&gt;Put in the refrigerator for an hour. &lt;/li&gt;
+&lt;/ol&gt;
+        </code>
+        </pre>
+    </div>
+</div>
+<link rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/monokai-sublime.min.css">
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>

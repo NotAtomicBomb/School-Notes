@@ -1,6 +1,7 @@
 body {
     background-color: #2F004F;
     color: white;
+    font-family: "Segoe UI", serif;
 }
 
 a {
@@ -8,6 +9,25 @@ a {
     color: white;
 }
 
-pre.prettyprint {
-    background-color: hsl(0, 0%, 96.5%);
+div.item {
+    width: fit-content;
+    padding: 0 30px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #2a0046;
+    margin-top: 20px;
+}
+
+.main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+
+header {
+    padding: 5px;
+    border-bottom: 5px solid #2a0046;
 }

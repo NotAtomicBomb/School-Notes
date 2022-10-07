@@ -19,7 +19,8 @@ def course_subject(request, course_id, subject_name):
     subject_name = subject_name.replace(" ", "-")
 
     try:
-        return render(request, f'school/subjects/{course_id.lower()}/{subject_name.lower()}.html')
+        return render(request, f'school/subjects/{course_id.lower()}/{subject_name.lower()}.html',
+                      {'subject_name': subject_name})
     except:
         raise Http404
 
