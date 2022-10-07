@@ -1,12 +1,6 @@
 @media screen and (max-width: 800px) {
-    .grid {
-        display: grid;
-        grid-template-columns: 20% 20%;
-        grid-template-rows: auto;
-        align-content: center;
-        justify-content: center;
-        row-gap: 0.5rem;
-        column-gap: 0.5rem;
+    body .grid {
+        grid-template-columns: 40% 40%;
     }
 }
 
@@ -26,6 +20,7 @@ ul {
     justify-content: center;
     row-gap: 0.5rem;
     column-gap: 0.5rem;
+    font-size: 1.8rem;
 }
 
 .menu-item {
