@@ -4,7 +4,9 @@
 <div>
     <ul class="grid">
         {% for s in course.subject_set.all %}
-            <li class="menu-item">{{ s.subject_name }}</li>
+            <a href="{% url 'subject' course.course_code  s.proper_url_name %}">
+                <li class="menu-item">{{ s.subject_name }}</li>
+            </a>
         {% endfor %}
     </ul>
 </div>
