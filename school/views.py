@@ -1,4 +1,4 @@
-from django.http import HttpResponse
+from django.http import HttpResponse, Http404
 from django.shortcuts import render, get_object_or_404, get_list_or_404
 
 from school.models import Question, Course
@@ -13,6 +13,15 @@ def school_index(request):
 def course_subjects(request, course_id):
     course = get_object_or_404(Course, course_code=course_id)
     return render(request, 'school/subjects.html', {"course": course})
+
+
+def course_subject(request, course_id, subject_name):
+    subject_name = subject_name.replace(" ", "-")
+
+    try:
+        return render(request, f'school/subjects/{course_id.lower()}/{subject_name.lower()}.html')
+    except:
+        raise Http404
 
 
 def index(request):
