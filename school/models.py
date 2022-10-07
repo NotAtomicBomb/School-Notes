@@ -1,6 +1,9 @@
 import datetime
+import os
+import shutil
 
 from django.db import models
+from django.dispatch import receiver
 from django.utils import timezone
 
 
@@ -39,3 +42,73 @@ class Subject(models.Model):
 
     def __str__(self):
         return self.subject_name
+
+    def proper_url_name(self):
+        return self.subject_name.replace(' ', '-')
+
+
+@receiver(models.signals.post_save, sender=Subject)
+def execute_after_save(sender, instance, created, *args, **kwargs):
+    if created:
+        name = instance.proper_url_name().lower()
+        course_name = instance.course.course_code.lower()
+        source = 'school/templates/template.html'
+        target = f'school/templates/school/subjects/{course_name}/{name}.html'
+        shutil.copy(source, target)
+        print(instance.course.course_code)
+
+
+@receiver(models.signals.post_save, sender=Course)
+def execute_after_save(sender, instance, created, *args, **kwargs):
+    if created:
+        name = instance.course_code.lower()
+        try:
+            os.mkdir(f'school/templates/school/subjects/{name}/')
+        except:
+            print("Directory already exists")
+
+
+@receiver(models.signals.post_delete, sender=Course)
+def execute_after_save(sender, instance, **kwargs):
+    name = instance.course_code.lower()
+    try:
+        os.rmdir(f'school/templates/school/subjects/{name}/')
+    except:
+        print("Directory already deleted")
+
+
+@receiver(models.signals.post_delete, sender=Subject)
+def execute_after_deletion(sender, instance, **kwargs):
+    name = instance.proper_url_name().lower()
+    course_name = instance.course.course_code.lower()
+    filepath = f'school/templates/school/subjects/{course_name}/{name}.html'
+    if os.path.exists(filepath):
+        os.remove(filepath)
+        print("File was deleted")
+    else:
+        print("File was already deleted")
+
+
+@receiver(models.signals.post_init, sender=Subject)
+def execute_after_deletion(sender, instance, **kwargs):
+    try:
+        name = instance.proper_url_name().lower()
+        course_name = instance.course.course_code.lower()
+        source = 'school/templates/template.html'
+        target = f'school/templates/school/subjects/{course_name}/{name}.html'
+        if not os.path.exists(target):
+            shutil.copy(source, target)
+        else:
+            print("File already exists")
+        print(name)
+    except:
+        return
+
+
+@receiver(models.signals.post_init, sender=Course)
+def execute_after_deletion(sender, instance, **kwargs):
+    course_name = instance.course_code.lower()
+    try:
+        os.mkdir(f'school/templates/school/subjects/{course_name}/')
+    except:
+        return
