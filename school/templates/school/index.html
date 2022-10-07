@@ -1,9 +1,11 @@
 {% load static %}
-<link rel="stylesheet" href="{% static 'school/style.css' %}">
+<link rel="stylesheet" href="{% static 'school/menu.css' %}">
 <div>
     <ul class="grid">
         {% for c in course_list %}
-            <li class="menu-item" title="{{ c.course_name }}">{{ c.course_code }}</li>
+            <a class="link" href="{% url 'subjects' c.course_code %}">
+                <li class="menu-item" title="{{ c.course_name }}">{{ c.course_code }}</li>
+            </a>
         {% endfor %}
     </ul>
 </div>

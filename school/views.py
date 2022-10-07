@@ -10,6 +10,11 @@ def school_index(request):
     return render(request, "school/index.html", {"course_list": course_list})
 
 
+def course_subjects(request, course_id):
+    course = get_object_or_404(Course, course_code=course_id)
+    return render(request, 'school/subjects.html', {"course": course})
+
+
 def index(request):
     latest_question_list = get_list_or_404(Question.objects.order_by('-pub_date').reverse())
     context = {

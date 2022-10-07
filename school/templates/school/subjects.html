@@ -1,0 +1,9 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'school/menu.css' %}">
+<div>
+    <ul class="grid">
+        {% for s in course.subject_set.all %}
+            <li class="menu-item">{{ s.subject_name }}</li>
+        {% endfor %}
+    </ul>
+</div>
