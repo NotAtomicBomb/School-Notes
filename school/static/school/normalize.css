@@ -10,7 +10,7 @@ a {
 }
 
 div.item {
-    width: fit-content;
+    width: 600px;
     padding: 0 30px;
     margin-left: 20px;
     display: flex;
@@ -22,8 +22,9 @@ div.item {
 
 .main {
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
+    align-content: center;
 }
 
 
