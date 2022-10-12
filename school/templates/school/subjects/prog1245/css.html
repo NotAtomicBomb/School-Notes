@@ -1,0 +1,37 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'school/normalize.css' %}">
+<link rel="stylesheet" href="{% static 'school/css.css' %}">
+<header><a class="back-button" href="{% url 'subjects' course_code %}">⬅Back</a>
+    <h1>{{ subject_name }}</h1></header>
+<div class="main">
+
+    <div class="item">
+        <h2>Basic Css</h2>
+        <pre>
+            <code class="language-css">
+body /* body is the selector */ {
+    width: 900px; /* Sets width to 900 pixels */
+    border: 2px solid black; /* Sets a 2 pixel black border */
+    color: white; /* Sets text color to white */
+    background-colo: #2a0046; /* Sets background color to a Dark Purple */
+    margin: 20px; /* Adds 20px to the outside of the element pushing things away. */
+    padding: 20px; /* Adds 20px to the inside of the element making it look bigger. */
+}
+nav {
+    text-align: center; /* Centers the text in the element */
+    font-size: 20px; /* Makes the text size bigger or smaller */
+    font-weight: bold; /* Makes the text bold */
+}
+a {
+    text-decoration: none; /* Removes underline */
+}
+        </code>
+        </pre>
+    </div>
+
+</div>
+
+<link rel="stylesheet"
+      href="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/styles/monokai-sublime.min.css">
+<script src="//cdn.jsdelivr.net/gh/highlightjs/cdn-release@11.6.0/build/highlight.min.js"></script>
+<script>hljs.highlightAll();</script>
