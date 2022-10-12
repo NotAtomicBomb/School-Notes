@@ -20,7 +20,7 @@ def course_subject(request, course_id, subject_name):
 
     try:
         return render(request, f'school/subjects/{course_id.lower()}/{subject_name.lower()}.html',
-                      {'subject_name': subject_name})
+                      {'subject_name': subject_name, 'course_code': course_id})
     except:
         raise Http404
 

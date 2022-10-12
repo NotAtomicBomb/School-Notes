@@ -1,2 +1,4 @@
 {% load static %}
 <link rel="stylesheet" href="{% static 'school/normalize.css' %}">
+<header><a class="back-button" href="{% url 'subjects' course_code %}">⬅Back</a>
+    <h1>{{ subject_name }}</h1></header>

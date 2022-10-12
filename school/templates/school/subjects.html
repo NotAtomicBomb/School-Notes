@@ -2,6 +2,7 @@
 <link rel="stylesheet" href="{% static 'school/menu.css' %}">
 <link rel="stylesheet" href="{% static 'school/normalize.css' %}">
 <div>
+    <a class="back-button" href="{% url 'school' %}">⬅Back</a>
     <ul class="grid">
         {% for s in course.subject_set.all %}
             <a href="{% url 'subject' course.course_code  s.proper_url_name %}">
